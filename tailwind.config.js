@@ -11,6 +11,10 @@ export default {
 
     theme: {
         extend: {
+            backgroundImage: {
+                'hero-pattern': "url('https://images.pexels.com/photos/15272613/pexels-photo-15272613/free-photo-of-ciel-soleil-couchant-sombre-lune.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')",
+        },
+            
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

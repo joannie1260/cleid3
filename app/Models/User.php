@@ -21,6 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
+        'phone',
+        'url_facebook',
+        'url_twitter',
+        'url_linkedin',
+        'url_gme',
+        'url_background',
+        
     ];
 
     /**
@@ -29,8 +37,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'id',
         'password',
         'remember_token',
+        'role'
     ];
 
     /**
@@ -42,4 +52,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; // Adjust based on your user roles implementation
+    }
 }

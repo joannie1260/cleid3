@@ -64,3 +64,41 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+-------------------------
+
+# Notes Joannie TODO
+- Langue FR / package json deja ajouter doit config
+- Email / recover password validation
+
+Ajout user 
+- Photo avatar espace serveur
+- Photo background options modifiables mais pas d'ajout
+
+
+## Details pages 
+
+Page accueil        cle.id-3.net
+Page accueil        cle.id-3.net/stratego
+Page Login          cle.id-3.net/login
+
+-- Login
+Page Dashboard      cle.id3.net/dashboard
+Page profile        cle.id3.net/profile
+
+
+-- guest
+Page QRstratego     cle.id-3.net?qrid=xxx&type=stratego
+Page QRVcard        Cle.id-3.net?QRID=xxx&Type=vCard (Prise info dans la bd ->modifiable au login par le client directement dans son profile)
+
+
+## Notions 
+ GUEST
+ -> peut afficher certaines données désire en validant dans la bd si une valeur exemple id ou email se retrouve dans notre BD de clients 
+
+
+
+
+
