@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Notifications\NewResetPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +13,11 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new NewResetPasswordNotification($token));
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +35,12 @@ class User extends Authenticatable
         'url_linkedin',
         'url_gme',
         'url_background',
-        
+        'url_instagram',
+        'url_threads',
+        'url_compagnie',
+        'url_title',
+        'id',
+        'role',
     ];
 
     /**
@@ -37,10 +49,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'id',
         'password',
         'remember_token',
-        'role'
     ];
 
     /**

@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ $user->name }} - Titre</title>
+    <title>{{ $user->name }} - {{ $user->url_title }} </title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -843,12 +844,18 @@
 
     <div class="flex justify-center flex-col items-center h-screen">
 
-        <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
             <div class="flex flex-col items-center  text-gray-700">
                 <div class="m-1 text-center">
-                    <img src="{{ $user->avatar }}" alt="User Avatar" class="w-15 h-15 rounded-full mb-8">
+                    <img src="{{ $user->avatar }}" alt="User Avatar" class="w-18 h-18 rounded-full mb-8">
                     <h1 class="text-3xl font-semibold">{{ $user->name }}</h1>
-                    <p>Courtier immobilier - Remax</p>
+                    <div class="flex flex-row flex-wrap items-center justify-center">
+                        <p>{{ $user->url_title }}</p>
+                        {{-- <img src="{{ $user->url_compagnie }}" alt="Compangie Logo" class="w-10 h-10"> --}}
+                    </div>
+                    <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:{{ $user->name }};%0ATEL:{{ $user->phone }}%0AEMAIL:{{ $user->email }}%0AEND:VCARD"
+                        class="border p-2 m-4">Ajouter au Contact</a>
+
                 </div>
             </div>
             <ul class="flex items-center justify-center text-center">
@@ -864,24 +871,33 @@
                     <div class="m-2">
                         <a href="mailto:{{ $user->email }}"
                             class="m-1 flex items-center text-center p-3 bg-gray-100 text-gray-700 rounded-full">
-                            <i class="fa-regular fa-envelope text-2xl"></i> </a>
+                            <i class="fa-regular fa-envelope text-3xl"></i> </a>
                     </div>
                 </li>
                 <li>
                     <div class="m-2">
                         <a href="#"
                             class="m-1 flex items-center text-center p-3 bg-gray-100 text-gray-700 rounded-full">
-                            <i class="fa-solid fa-globe text-2xl"></i> </a>
+                            <i class="fa-solid fa-globe text-3xl"></i> </a>
                     </div>
                 </li>
-        </div>
+            </div>
+   
 
-        <ul class="flex items-center flex-col justify-center text-center text-gray-700">
+        <ul class="flex items-center flex-row justify-center text-center text-gray-700">
             <li>
                 <div class="flex">
                     <a href="{{ $user->url_facebook }}" class="m-2 flex items-center">
                         <i class="fa-brands fa-facebook p-2"></i>
-                        Facebook
+                        {{-- Facebook --}}
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="flex">
+                    <a href="{{ $user->url_instagram }}" class="m-2 flex items-center">
+                        <i class="fa-brands fa-instagram p-2"></i>
+                        {{-- Instagram --}}
                     </a>
                 </div>
             </li>
@@ -889,27 +905,36 @@
                 <div class="flex">
                     <a href="{{ $user->url_twitter }}" class="m-2 flex items-center text-center">
                         <i class="fa-brands fa-twitter p-2"></i>
-                        Twitter</a>
+                        {{-- Twitter --}}
+                    </a>
                 </div>
             </li>
             <li>
                 <div class="flex">
                     <a href="{{ $user->url_linkedin }}" class="m-2 flex items-center text-center">
                         <i class="fa-brands fa-linkedin p-2"></i>
-                        Linkedin</a>
+                        {{-- Linkedin --}}
+                    </a>
                 </div>
             </li>
             <li>
                 <div class="flex flex-col">
-
                     <a href="{{ $user->url_gme }}" class="m-1 flex items-center text-center">
                         <i class="fa-brands fa-google pr-2"></i>
-                        Laissez un commentaire
+                        {{-- Laissez un commentaire --}}
                     </a>
                 </div>
-
+            </li>
+            <li>
+                <div class="flex flex-col">
+                    <a href="{{ $user->url_threads }}" class="m-1 flex items-center text-center">
+                        <i class="fa-brands fa-threads pr-2"></i>
+                        {{-- Laissez un commentaire --}}
+                    </a>
+                </div>
             </li>
 
-     </div>
+
+    </div>
     </div>
 </body>

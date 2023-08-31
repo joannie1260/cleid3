@@ -25,6 +25,11 @@ class ProfileUpdateRequest extends FormRequest
             'url_linkedin' => ['string', 'max:255'],
             'url_gme' => ['string', 'max:255'],
             'url_background' => ['string', 'max:255'],
+            'url_instagram' => ['string', 'max:255'],
+            'url_threads' => ['string', 'max:255'],
+            'url_compagnie' => ['string', 'max:255'],
+            'url_title' => ['string', 'max:255'],
+            'role' => ['string', 'max:255', 'in:admin,user'],
             'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
         ];
     }

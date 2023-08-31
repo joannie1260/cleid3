@@ -71,11 +71,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # Notes Joannie TODO
 - Langue FR / package json deja ajouter doit config
-- Email / recover password validation
+- Email / recover password validation fonctionnel - doit confirmer sur quel boite on ajoute.
 
-Ajout user 
-- Photo avatar espace serveur
-- Photo background options modifiables mais pas d'ajout
+Standby- Photo avatar espace serveur
+ 
+
+# Notes Sylvain TODO
+
+- Création des utilisateurs
+-> Remise de la cle aux utilisateurs 
+
+
+-> Gestion des photos
+Photo background url sans ajout de valeur au serveur
+
 
 
 ## Details pages 
@@ -88,7 +97,6 @@ Page Login          cle.id-3.net/login
 Page Dashboard      cle.id3.net/dashboard
 Page profile        cle.id3.net/profile
 
-
 -- guest
 Page QRstratego     cle.id-3.net?qrid=xxx&type=stratego
 Page QRVcard        Cle.id-3.net?QRID=xxx&Type=vCard (Prise info dans la bd ->modifiable au login par le client directement dans son profile)
@@ -97,6 +105,8 @@ Page QRVcard        Cle.id-3.net?QRID=xxx&Type=vCard (Prise info dans la bd ->mo
 ## Notions 
  GUEST
  -> peut afficher certaines données désire en validant dans la bd si une valeur exemple id ou email se retrouve dans notre BD de clients 
+
+ 
 
 
 

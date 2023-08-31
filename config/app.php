@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'QRID'),
+    'name' => env('APP_NAME', 'CLé ID-3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,6 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-
     'asset_url' => env('ASSET_URL'),
 
     /*
@@ -85,6 +84,19 @@ return [
 
     'locale' => 'en',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Available locales
+    |--------------------------------------------------------------------------
+    |
+    | List all locales that your application works with
+    |
+    */
+    
+    'available_locales' => [
+        'English' => 'en',
+        'French' => 'fr',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
